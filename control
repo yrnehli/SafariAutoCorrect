@@ -1,6 +1,6 @@
 Package: xyz.henryli17.safariautocorrect
 Name: SafariAutoCorrect
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
 Description: Enable autocorrect in the URL/search bar of Safari. Developed for iOS 14.
 Maintainer: Henry Li

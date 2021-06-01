@@ -1,5 +1,6 @@
 #import "Tweak.h"
 
+static BOOL enabledAutoCorrect = NO;
 static id navigationBarTextField;
 
 %hook UIFieldEditor
@@ -14,8 +15,9 @@ static id navigationBarTextField;
 
 %hook UITextField
 - (id)text {
-	if (self == navigationBarTextField) {
+	if (!enabledAutoCorrect && self == navigationBarTextField) {
 		[[self textInputTraits] setAutocorrectionType:2];
+		enabledAutoCorrect = YES;
 	}
 	
 	return %orig;
